@@ -30,13 +30,16 @@ function App() {
   return (
     <>
       <body className='d-flex justify-content-center align-items-center vh-100'>
-        <div className="container text-center">
-          <div className="my-3">
-            <h2>Counter: {count}</h2>
+        <div className="container text-center border border-danger border-4 rounded py-5">
+          <div className="container my-5">
+            <h1>Counter: {count}</h1>
           </div>
+          <div className="container">
           <button className='btn btn-success px-5 m-3' onClick={start}><h3>Start</h3></button>
           <button className='btn btn-danger px-5 m-3' onClick={stop}><h3>Stop</h3></button>
           <button className='btn btn-warning px-5 m-3' onClick={reset}><h3>Reset</h3></button>
+          </div>
+
         </div>
       </body>
     </>
