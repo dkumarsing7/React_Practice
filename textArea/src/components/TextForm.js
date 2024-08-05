@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 
 export default function TextForm(props) {
     const [text, setText] = useState("");
@@ -9,6 +9,10 @@ export default function TextForm(props) {
 
     const handleLower = () => {
         setText(text.toLowerCase());
+    };
+    
+    const handleCopy = () => {
+        navigator.clipboard.writeText(text);
     };
 
     const handleTextChange = (e) => {
@@ -24,12 +28,13 @@ export default function TextForm(props) {
                 </div>
                 <button className="btn btn-primary mx-1" onClick={handleUpper} >UPPERCASE</button>
                 <button className="btn btn-primary mx-1" onClick={handleLower} >lowercase</button>
+                <button className="btn btn-primary mx-1" onClick={handleCopy} >Copy</button>
             </div>
             <div className="container my-3">
                 <h2>Your text summary</h2>
-                <p>Words: {text.split(" ").length}</p>
+                <p>Words: {text.split(" ").filter(word => word!== "").length}</p>
                 <p>Characters: {text.length}</p>
-                <p>Sentence: {text.split(".").length}</p>
+                <p>Sentences: {text.split(/[.!?]/).filter(sentence => sentence!== "").length}</p>
             </div>
         </>
     )

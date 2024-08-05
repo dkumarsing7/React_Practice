@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const [isCounting, setIsCounting] = useState(false);
 
   useEffect(() => {
@@ -21,10 +21,10 @@ function App() {
   };
   const stop = () => {
     setIsCounting(false);
-    };
-    const reset = () => {
-      setCount(0);
-      setIsCounting(false);
+  };
+  const reset = () => {
+    setCount(1);
+    setIsCounting(false);
   };
 
   return (
@@ -35,9 +35,9 @@ function App() {
             <h1>Counter: {count}</h1>
           </div>
           <div className="container">
-          <button className='btn btn-success px-5 m-3' onClick={start}><h3>Start</h3></button>
-          <button className='btn btn-danger px-5 m-3' onClick={stop}><h3>Stop</h3></button>
-          <button className='btn btn-warning px-5 m-3' onClick={reset}><h3>Reset</h3></button>
+            <button className='btn btn-success px-5 m-3' onClick={start}><h3>Start</h3></button>
+            <button className='btn btn-danger px-5 m-3' onClick={stop}><h3>Stop</h3></button>
+            <button className='btn btn-warning px-5 m-3' onClick={reset}><h3>Reset</h3></button>
           </div>
 
         </div>
