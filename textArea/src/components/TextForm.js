@@ -24,7 +24,7 @@ export default function TextForm(props) {
             <div>
                 <h2>{props.heading}</h2>
                 <div className="mb-3 ">
-                    <textarea className="form-control accordion" id="myBox" value={text} onChange={handleTextChange} rows="10"></textarea>
+                    <textarea className="form-control" id="myBox" value={text} onChange={handleTextChange} rows="10"></textarea>
                 </div>
                 <button className="btn btn-primary mx-1" onClick={handleUpper} >UPPERCASE</button>
                 <button className="btn btn-primary mx-1" onClick={handleLower} >lowercase</button>
